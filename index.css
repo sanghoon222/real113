@@ -10,6 +10,9 @@ header {
 }
 
 header > div {
+  display: flex;
+  justify-content: space-between;
+
   position: relative;
   width: 1000px;
   height: 100%;
@@ -21,15 +24,13 @@ header .logo {
 }
 
 header .gnb {
-  float: right;
   width: 620px;
   height: 32px;
   margin-top: 14px;
-  overflow: hidden;
+  display: flex;
 }
 
 header .gnb > li {
-  float: left;
   width: 20%;
   height: 100%;
   box-sizing: border-box;
@@ -37,7 +38,6 @@ header .gnb > li {
 }
 
 header .gnb > li > a {
-  text-align: right;
   line-height: 32px;
   font-size: 17px;
   font-weight: bolder;
@@ -50,11 +50,16 @@ header .latest {
   width: 50%;
   height: 30px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 header .latest > a:nth-child(1) {
-  position: relative;
-  top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+header .latest > a:nth-child(1) > img {
 }
 
 header .latest > a {
@@ -67,9 +72,7 @@ header .latest > a:nth-child(2):hover {
 }
 
 header .latest > a:nth-child(2) {
-  position: relative;
-  top: -4px;
-  left: 6px;
+  margin-left: 12px;
 }
 
 header .latest > a:nth-child(2)::before {
@@ -88,20 +91,28 @@ main {
 }
 
 main > div {
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
-main > div > div {
+.mainWrapper {
+  width: 406px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner,
+.mainWrapper > div {
   box-sizing: border-box;
   border: 1px solid #d7d7d7;
 }
 
 main > div > .banner {
-  float: left;
   width: 588px;
   height: 320px;
   background: url(./images/main_banner_bg.jpg) no-repeat;
-  overflow: hidden;
+  background-size: cover;
 }
 
 main > div > .banner > img {
@@ -109,40 +120,38 @@ main > div > .banner > img {
   margin-left: 160px;
 }
 
-main > div > .call {
+.mainWrapper > .call {
   position: relative;
-  float: right;
   width: 406px;
   height: 133px;
   background: #f2f2f2;
 }
 
-main > div > .call > img {
+.mainWrapper .call > img {
   position: absolute;
 }
 
-main > div > .call > img:nth-child(1) {
+.mainWrapper .call > img:nth-child(1) {
   left: 20px;
   top: 20px;
 }
-main > div > .call > img:nth-child(2) {
+.mainWrapper .call > img:nth-child(2) {
   left: 20px;
   top: 46px;
   z-index: 10;
 }
-main > div > .call > img:nth-child(3) {
+.mainWrapper .call > img:nth-child(3) {
   left: 30px;
   bottom: 20px;
   z-index: 10;
 }
-main > div > .call > img:nth-child(4) {
+.mainWrapper .call > img:nth-child(4) {
   right: 0;
   top: 0;
   z-index: 0;
 }
 
-main > div > .qna {
-  float: right;
+.mainWrapper .qna {
   width: 406px;
   height: 182px;
   margin-top: 5px;
@@ -150,11 +159,11 @@ main > div > .qna {
   box-sizing: border-box;
 }
 
-main > div > .qna > h3 {
+.mainWrapper .qna > h3 {
   font-weight: bold;
   font-size: 14px;
 }
-main > div > .qna > table {
+.mainWrapper .qna > table {
   width: 100%;
   height: auto;
   border-collapse: collapse;
@@ -162,34 +171,33 @@ main > div > .qna > table {
   margin-top: 6px;
 }
 
-main > div > .qna > table td {
+.mainWrapper .qna > table td {
   color: #6a6a6a;
 }
 
-main > div > .qna > table td:nth-child(2) {
+.mainWrapper .qna > table td:nth-child(2) {
   display: inline-block;
   width: 296px;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space-collapse: collapse;
   text-wrap: nowrap;
   line-height: 20px;
 }
 
-main > div > .qna > table a:hover {
+.mainWrapper .qna > table a:hover {
   text-decoration: underline;
 }
 
-main > div > .qna > table a {
+.mainWrapper .qna > table a {
   color: inherit;
 }
 
 main > section {
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 main > section > aside {
-  float: left;
   width: 195px;
   height: 760px;
   margin-top: 5px;
@@ -202,7 +210,6 @@ main > section > aside > article {
   height: 204px;
   padding: 10px;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 main > section > aside > article > h3 {
@@ -218,7 +225,6 @@ main > section > aside > article > ul > li {
   text-overflow: ellipsis;
   white-space-collapse: collapse;
   text-wrap: nowrap;
-  overflow: hidden;
   line-height: 20px;
 }
 
@@ -262,8 +268,9 @@ main > section > aside > a {
   height: 83px;
   border: 1px solid #999;
   box-sizing: border-box;
-  overflow: hidden;
   margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
 }
 
 main > section > aside > a > img:nth-child(1) {
@@ -273,7 +280,8 @@ main > section > aside > a > img:nth-child(1) {
 }
 
 main > section > aside > a > img:nth-child(2) {
-  float: right;
+  position: absolute;
+  right: 0;
 }
 
 main > section > aside > .banner {
@@ -288,7 +296,9 @@ main > section > aside > .banner {
 }
 
 main > section > aside > .banner > img:nth-child(1) {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 main > section > aside > .banner > img:nth-child(2) {
@@ -301,8 +311,7 @@ main > section > aside > .banner > a > img {
   margin-top: 10px;
 }
 
-main > section > article {
-  float: right;
+.articleWrapper > article {
   width: 800px;
   height: 250px;
   margin-top: 5px;
@@ -311,34 +320,34 @@ main > section > article {
   box-sizing: border-box;
 }
 
-main > section > article > h3 {
+.articleWrapper > article > h3 {
   font-size: 14px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
 
-main > section > article > h3 > a {
-  float: right;
+.articleWrapper > article > h3 > a {
 }
 
-main > section > article > ul {
+.articleWrapper > article > ul {
   width: 100%;
   height: auto;
-  overflow: hidden;
   margin-top: 26px;
+  display: flex;
 }
 
-main > section > article > ul > li {
-  float: left;
+.articleWrapper > article > ul > li {
   width: 20%;
   height: 100%;
 }
 
-main > section > article > ul .thumb {
+.articleWrapper > article > ul .thumb {
   width: 150px;
   height: 100px;
 }
 
-main > section > article > ul > li > a {
+.articleWrapper > article > ul > li > a {
   display: block;
   text-align: center;
 }
