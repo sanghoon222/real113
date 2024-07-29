@@ -176,11 +176,14 @@ main > div > .banner > img {
 }
 
 .mainWrapper .qna > table td:nth-child(2) {
-  display: inline-block;
   width: 296px;
+}
+.mainWrapper .qna > table td:nth-child(2) > a {
+  display: block;
+  width: 296px;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space-collapse: collapse;
-  text-wrap: nowrap;
   line-height: 20px;
 }
 
@@ -222,14 +225,18 @@ main > section > aside > article > ul {
 }
 
 main > section > aside > article > ul > li {
-  text-overflow: ellipsis;
-  white-space-collapse: collapse;
-  text-wrap: nowrap;
-  line-height: 20px;
 }
 
 main > section > aside > article > ul > li > a::before {
   content: url(./images/ico_latest.gif);
+}
+
+main > section > aside > article > ul > li > a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
 }
 
 main > section > aside > article > a {
